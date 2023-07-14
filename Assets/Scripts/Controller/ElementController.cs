@@ -1,31 +1,53 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
+    [HideInInspector]
     public RectTransform rect;
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        
-    }
-  
-    public void OnDrag(PointerEventData eventData)
-    {
-        rect.transform.position = eventData.position;
-    }
-    public void OnEndDrag(PointerEventData eventData)
-    {
-    }
-
+    [HideInInspector]
+    public Vector3 startPos;
 
     private void Start()
     {
         rect = GetComponent<RectTransform>();
     }
 
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        StartPosUpdate();
+    }
+  
+    public void OnDrag(PointerEventData eventData)
+    {
+        rect.transform.position = eventData.position;
+    }
+
+    private void StartPosUpdate() 
+    {
+        startPos = rect.transform.position;
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        var gr = GameManager.Instance.graphicRaycaster;
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        gr.Raycast(eventData,raycastResults);
+        foreach(var item  in raycastResults) 
+        {
+            if(item.gameObject.CompareTag("Frame")) 
+            {
+                item.gameObject.GetComponent<FrameController>().OnDrop(this);
+                return;
+            }
+        }
+        rect.transform.position = startPos;
+    }
+
+
+ 
 
 
 

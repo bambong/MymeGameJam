@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class FrameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [HideInInspector]
+    public RectTransform rect;
+    [HideInInspector]
+    public ElementController curElement;
+
+    private void Start()
     {
-        
+        rect = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrop(ElementController element) 
     {
-        
+        if(curElement != null) 
+        {
+            Destroy(curElement);
+        }
+        curElement = element;
+        element.rect.transform.position = rect.transform.position;
     }
 }
