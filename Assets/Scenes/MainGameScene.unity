@@ -3273,95 +3273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6833ce2fb65bb80428d94a1aa26e3471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1610319640
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1610319642}
-  - component: {fileID: 1610319641}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1610319641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610319640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6144ef41f23673946a33a8e2d4ce493f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelDatas:
-  - scoreForThisLevel: 0
-    enableShapeSpawn: 00000000
-    enableMerchantSpawn:
-    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 1500
-    enableShapeSpawn: 0000000001000000
-    enableMerchantSpawn:
-    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 3000
-    enableShapeSpawn: 000000000100000002000000
-    enableMerchantSpawn:
-    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
-    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 4000
-    enableShapeSpawn: 000000000100000002000000
-    enableMerchantSpawn:
-    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
-    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
-    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 5000
-    enableShapeSpawn: 00000000010000000200000003000000
-    enableMerchantSpawn:
-    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
-    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
-    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
-    - {fileID: 3956650129906436696, guid: a5975b7a97621f144a4c3ebb9e66f716, type: 3}
-    spawnTime: 5
-  merchantSpawnController: {fileID: 635849140}
-  scoreText: {fileID: 1332229962}
-  hpFillImage: {fileID: 1298657627}
-  elementMoveParent: {fileID: 1678120945}
-  resultLayout: {fileID: 1701127953}
-  graphicRaycaster: {fileID: 1678120942}
-  endPanel: {fileID: 226806871}
-  score: 0
-  merchantCount: 0
---- !u!4 &1610319642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610319640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623437021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,6 +4461,95 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &310573788206802315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043432398482848249, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: endPanel
+      value: 
+      objectReference: {fileID: 226806871}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1332229962}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: hpFillImage
+      value: 
+      objectReference: {fileID: 1298657627}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: resultLayout
+      value: 
+      objectReference: {fileID: 1701127953}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: graphicRaycaster
+      value: 
+      objectReference: {fileID: 1678120942}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: elementMoveParent
+      value: 
+      objectReference: {fileID: 1678120945}
+    - target: {fileID: 4103570721162903888, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: merchantSpawnController
+      value: 
+      objectReference: {fileID: 635849140}
+    - target: {fileID: 7152165536385588841, guid: f148808c2f479b74f815c09834fc3479, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f148808c2f479b74f815c09834fc3479, type: 3}
 --- !u!1001 &2926726382189233965
 PrefabInstance:
   m_ObjectHideFlags: 0
