@@ -5,8 +5,8 @@ using UnityEngine;
 public class MerchantHitController : MonoBehaviour
 {
     public MerchantController merchantController;
-    public void OnDrop(PotController pot) 
+    public bool OnDrop(PotController pot) 
     {
-        merchantController.OnDrop(pot);
+        return merchantController.OnDrop(pot);
     }
 }

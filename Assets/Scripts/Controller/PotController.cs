@@ -56,17 +56,14 @@ public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         gr.Raycast(eventData,raycastResults);
         foreach(var item in raycastResults)
         {
-            //if(item.gameObject.CompareTag("Frame"))
-            //{
-            //    if(curFrame != null)
-            //    {
-            //        curFrame.curElement = null;
-            //        curFrame = null;
-            //    }
-            //    item.gameObject.GetComponent<FrameController>().OnDrop(this);
-            //    PrefabsManager.Instance.elementSpawner[(int)myType].Generate();
-            //    return;
-            //}
+            if(item.gameObject.CompareTag("Merchant"))
+            {
+                if(item.gameObject.GetComponent<MerchantHitController>().OnDrop(this)) 
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+            }
         }
         rect.transform.position = startPos;
         rect.transform.SetParent(prevParent);

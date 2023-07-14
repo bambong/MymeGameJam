@@ -5,14 +5,9 @@ using UnityEngine.UI;
 
 public class MerchantController : MonoBehaviour
 {
-
-
-
     public RectTransform rect;
     [SerializeField]
     private Animator animator;
-   
-
 
     [Header("Think BOX")]
     [SerializeField]
@@ -21,8 +16,6 @@ public class MerchantController : MonoBehaviour
     private Image fillImage;
     [SerializeField]
     private Image potImage;
-
-
     
     [Header("점수 얼마나 줄지")]
     public int scoreAmount = 30;
@@ -35,6 +28,8 @@ public class MerchantController : MonoBehaviour
     [HideInInspector]
     public PotType desirePot;
 
+
+    public Vector2 desirePos;
     private Coroutine waitCo;
 
     private bool isSpawning = true;
@@ -45,16 +40,17 @@ public class MerchantController : MonoBehaviour
 
     public int MyIndex { get; set; }
 
-    private readonly string IDLE_ANIM_KEY = "Merchant_Anim_Idle";
-    private readonly string MOVE_ANIM_KEY = "Merchant_Anim_Move";
-    private readonly string RUNAWAY_ANIM_KEY = "Merchant_Anim_Runaway";
+  
+    private readonly string MOVE_ANIM_KEY = "IsMove";
+    private readonly string RUNAWAY_ANIM_KEY = "IsRun";
 
-    public void OnSpawn(Vector3 desirePos, PotController pot)
+    public void OnSpawn(Vector2 desirePos, PotController pot)
     {
         thinkBox.gameObject.SetActive(false);
         SetAnimMove();
         potImage.sprite = pot.image.sprite;
         desirePot = pot.myType;
+        this.desirePos = desirePos;
         StartCoroutine(SpawnMove(desirePos));
     }
     public bool OnDrop(PotController pot) 
@@ -72,20 +68,37 @@ public class MerchantController : MonoBehaviour
         GameManager.Instance.AddScore(scoreAmount);
         SetAnimRunAway();
         return true;
+    }
 
+    private void Update()
+    {
+        if(!isComplete && !isSpawning) 
+        {
+            var dir = desirePos - rect.anchoredPosition;
+            var moveDis = Time.deltaTime * dir.normalized * moveSpeed;
+            if(dir.magnitude <= moveDis.magnitude)
+            {
+                SetAnimIdle();
+                rect.anchoredPosition = desirePos;
+                return;
+            }
+            SetAnimMove();
+            rect.anchoredPosition += moveDis;
+        }
     }
 
     public void SetAnimMove() 
     {
-        animator.Play(MOVE_ANIM_KEY);
+        animator.SetBool(MOVE_ANIM_KEY,true);
     }
     public void SetAnimIdle()
     {
-        animator.Play(IDLE_ANIM_KEY);
+        animator.SetBool(MOVE_ANIM_KEY,false);
     }
     public void SetAnimRunAway()
-    { 
-        animator.Play(RUNAWAY_ANIM_KEY);
+    {
+        animator.SetBool(RUNAWAY_ANIM_KEY,true);
+        GameManager.Instance.merchantSpawnController.DestroyMerChantCount(this);
         thinkBox.gameObject.SetActive(false);
     }
 
@@ -109,6 +122,7 @@ public class MerchantController : MonoBehaviour
     }
     public IEnumerator SpawnMove(Vector2 desirePos)
     {
+        SetAnimMove();
         while(true)
         {
             var dir = desirePos - rect.anchoredPosition;
@@ -127,10 +141,13 @@ public class MerchantController : MonoBehaviour
         thinkBox.gameObject.SetActive(true);
         waitCo = StartCoroutine(Wait());
     }
+
+
+
+
     public void OnRunAway() 
     {
         Destroy(gameObject);
-        GameManager.Instance.merchantSpawnController.DecreaseMerChantCount();
     }
 
 
