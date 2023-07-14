@@ -43,6 +43,7 @@ public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.PlayAudio_Select();
         StartPosUpdate();
         prevParent = transform.parent;
         transform.SetParent(GameManager.Instance.elementMoveParent);
@@ -74,6 +75,7 @@ public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
                 }
             }
         }
+        SoundManager.Instance.PlayAudio_Error();
         rect.transform.position = startPos;
         rect.transform.SetParent(prevParent);
     }

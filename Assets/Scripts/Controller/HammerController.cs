@@ -45,11 +45,13 @@ public class HammerController : MonoBehaviour, IDragHandler, IBeginDragHandler, 
             if(item.gameObject.CompareTag("Pot"))
             {
                 Destroy(item.gameObject);
+                SoundManager.Instance.PlayAudio_Destroy();
                 break;
             }
             else if(item.gameObject.CompareTag("Maker"))
             {
                 PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
+                SoundManager.Instance.PlayAudio_Destroy();
                 break;
             }
         }

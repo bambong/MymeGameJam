@@ -88,11 +88,13 @@ public class OvenController : MonoBehaviour
         ovenAnimator.SetBool(WORK_ANIM_KEY,false);
         completeButton.gameObject.SetActive(false);
         colorImage.color = normalColor;
-        
+        SoundManager.Instance.PlayAudio_Select();
         if(curRank == BakeRank.Burn) 
         {
+            SoundManager.Instance.PlayAudio_Effect_OvenOvercook();
             return;
         }
+        SoundManager.Instance.PlayAudio_Effect_OvenSuccess();
 
         var result = PrefabsManager.Instance.potPrefabs[curpotType].resultMakerGo;
 
@@ -108,6 +110,7 @@ public class OvenController : MonoBehaviour
 
     IEnumerator Bake() 
     {
+        SoundManager.Instance.PlayAudio_Effect_OvenEnter();
         ovenAnimator.SetBool(WORK_ANIM_KEY,true);
         ovenAnimator.SetFloat(WORK_SPEED_KEY,1);
         double curTime = 0;

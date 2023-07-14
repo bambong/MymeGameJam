@@ -95,6 +95,7 @@ public class MerchantController : MonoBehaviour
 
         if(!CheckCorrectPot(pot)) 
         {
+            SoundManager.Instance.PlayAudio_Error();
             return false;
         }
         if(waitCo != null) 
@@ -103,7 +104,7 @@ public class MerchantController : MonoBehaviour
             waitCo = null;
         }
 
-
+        SoundManager.Instance.PlayAudio_Effect_MerchantHappy();
         GameManager.Instance.AddScore(scoreAmount);
         GameManager.Instance.merchantCount++;
         SetAnimRunAway();
@@ -154,6 +155,7 @@ public class MerchantController : MonoBehaviour
             fillImage.fillAmount = (float)curTime;
             yield return null;
         }
+        SoundManager.Instance.PlayAudio_Effect_MerchantAngry();
         GameManager.Instance.DecreaseHp(damage);
 
         SetAnimRunAway();
@@ -163,6 +165,7 @@ public class MerchantController : MonoBehaviour
     public IEnumerator SpawnMove(Vector2 desirePos)
     {
         SetAnimMove();
+        SoundManager.Instance.PlayAudio_Effect_MerchantEnter();
         while(true)
         {
             var dir = desirePos - rect.anchoredPosition;

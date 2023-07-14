@@ -251,6 +251,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a86f3668043518942965337ff90b7cf7, type: 3}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6502807816856380590, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_Name
       value: ShapeButton_3
@@ -732,7 +748,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &307207743
 PrefabInstance:
@@ -746,6 +762,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 67a2937fe417f0a49b410eafb53069b9, type: 3}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6502807816856380590, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_Name
       value: ShapeButton_4
@@ -2308,9 +2340,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2343051871038683328, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
+      objectReference: {fileID: 0}
     - target: {fileID: 6051461579434499825, guid: 71c060ee72410e747a340487c43c6263, type: 3}
       propertyPath: m_Name
       value: BackGround_Cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723759435880078550, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 352.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723759435880078550, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 199.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433234968109654034, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -273.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622087415196096647, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858569979299775965, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: objectPosList.Array.data[0].y
+      value: -273.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858569979299775965, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: objectPosList.Array.data[1].y
+      value: -106
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858569979299775965, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: objectPosList.Array.data[2].y
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317688935390892106, guid: 71c060ee72410e747a340487c43c6263, type: 3}
+      propertyPath: m_Color.a
+      value: 0.84313726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3381,7 +3449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1650170933 stripped
 RectTransform:
@@ -3510,7 +3578,7 @@ RectTransform:
   - {fileID: 1830093736}
   - {fileID: 564827649}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3608,7 +3676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.20392157}
+  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4127,6 +4195,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2fdfc3369b50f994e9e9a3d8b990ffc2, type: 3}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6502807816856380590, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_Name
       value: ShapeButton_2
@@ -4253,7 +4337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2074414224
 PrefabInstance:
@@ -4265,7 +4349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5148370060409218571, guid: 60f0b65f12ab07a4cb6b60487441672c, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5148370060409218571, guid: 60f0b65f12ab07a4cb6b60487441672c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4423,7 +4507,7 @@ RectTransform:
   m_Children:
   - {fileID: 226806870}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4438,6 +4522,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 564827649}
     m_Modifications:
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082633014728803041, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6502807816856380590, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_Name
       value: ShapeButton_1

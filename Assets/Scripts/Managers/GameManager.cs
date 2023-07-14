@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        SoundManager.Instance.PlayAudio_BGM();
         stateController = new GameStateController(this);
         score = 0;
         curHp = MAX_HP;

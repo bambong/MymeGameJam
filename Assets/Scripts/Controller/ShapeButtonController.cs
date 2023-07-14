@@ -31,6 +31,7 @@ public class ShapeButtonController : MonoBehaviour
 
     public void ButtonActive() 
     {
+        SoundManager.Instance.PlayAudio_Select();
         PrefabsManager.Instance.baseMakerSpawner.Generate(myType);
     }
 

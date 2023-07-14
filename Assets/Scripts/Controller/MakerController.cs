@@ -22,6 +22,7 @@ public class MakerController : MonoBehaviour, IDragHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.PlayAudio_Select();
         StartPosUpdate();
     }
 
@@ -47,16 +48,20 @@ public class MakerController : MonoBehaviour, IDragHandler, IBeginDragHandler, I
                 if(item.gameObject.GetComponent<OvenController>().OnDrop(this)) 
                 {
                     PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
+                    SoundManager.Instance.PlayAudio_Drop();
                     return;
                 }
+
             }
             else if(item.gameObject.CompareTag("Hammer"))
             {
+                SoundManager.Instance.PlayAudio_Destroy();
                 PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
                 return;
             }
 
         }
+        SoundManager.Instance.PlayAudio_Error();
         rect.transform.position = startPos;
     }
 

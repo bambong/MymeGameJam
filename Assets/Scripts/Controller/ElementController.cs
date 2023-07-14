@@ -35,6 +35,7 @@ public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SoundManager.Instance.PlayAudio_Select();
         StartPosUpdate();
         prevParent = transform.parent;
         transform.SetParent(GameManager.Instance.elementMoveParent);
@@ -66,9 +67,11 @@ public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,I
                 }
                 item.gameObject.GetComponent<FrameController>().OnDrop(this);
                 PrefabsManager.Instance.elementSpawner[(int)myType].Generate();
+                SoundManager.Instance.PlayAudio_Drop();
                 return;
             }
         }
+        SoundManager.Instance.PlayAudio_Error();
         rect.transform.position = startPos;
         rect.transform.SetParent(prevParent);
     }

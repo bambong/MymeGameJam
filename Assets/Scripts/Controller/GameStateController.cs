@@ -70,6 +70,8 @@ public class GameOver : Singleton<GameOver>, IState<GameManager>, IInit
             item.StopAllCoroutines();
         }
         controller.endPanel.Open();
+        SoundManager.Instance.StopAudio_BGM();
+        SoundManager.Instance.PlayAudio_Etc_End();
     }
 
     public void OnExit(GameManager controller)
