@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d72f8a7047b48374a969f31fda2fef98
+guid: c5771ddf3260a46449f7555db1dbbcab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,28 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: BaseUI_0
-      rect:
-        serializedVersion: 2
-        x: 1251
-        y: 0
-        width: 312
-        height: 483
-      alignment: 9
-      pivot: {x: 0.53707534, y: 0.45722184}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c010a6adbedc604da563719ea1c23b8
-      internalID: -234466257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -153,8 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      BaseUI_0: -234466257
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
