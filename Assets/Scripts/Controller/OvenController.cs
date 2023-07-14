@@ -10,8 +10,6 @@ public enum BakeRank
     Burn
 }
 
-
-
 public class OvenController : MonoBehaviour 
 {
 
@@ -24,7 +22,9 @@ public class OvenController : MonoBehaviour
     public bool isBaking = false;
 
     public BakeRank curRank = BakeRank.None;
-    public GameObject curPot;
+    
+    public PotShapeType curpotType;
+    public List<ElementType> curElementTypes;
   
     
     public Color normalColor;
@@ -52,13 +52,20 @@ public class OvenController : MonoBehaviour
         {
             return false;
         }
-        var resultPot =  GameManager.Instance.CheckRecipes(maker); 
-        if(resultPot == null)
-        {
-            return false;
-        }
+     
         isBaking = true;
-        curPot = resultPot;
+        curpotType = maker.myType;
+        curElementTypes = new List<ElementType>();
+        for(int i =0; i < maker.frames.Count; ++i) 
+        {
+            if(maker.frames[i].curElementType == ElementType.None) 
+            {
+                return false;
+            }
+
+            curElementTypes.Add(maker.frames[i].curElementType);
+        }
+
         bakeCo = StartCoroutine(Bake());
         return true;
     }
@@ -82,7 +89,15 @@ public class OvenController : MonoBehaviour
             return;
         }
 
-        GameObject.Instantiate(curPot,Vector3.zero,Quaternion.identity,GameManager.Instance.resultLayout.transform);
+        var result = PrefabsManager.Instance.potPrefabs[curpotType].resultMakerGo;
+
+        var tempPot = Instantiate(result,Vector3.zero,Quaternion.identity,GameManager.Instance.resultLayout).GetComponent<PotController>();
+
+        for(int i = 0; i < curElementTypes.Count; ++i)
+        {
+            tempPot.elementTypes.Add(curElementTypes[i]);
+            tempPot.images[i].sprite = PrefabsManager.Instance.elementPrefabs[curElementTypes[i]].sprite;
+        }
     }
 
 

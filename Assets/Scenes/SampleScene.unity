@@ -251,11 +251,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,11 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1563,6 +1563,36 @@ MonoBehaviour:
   - {fileID: 1322189973}
   - {fileID: 2100404307}
   baseMakerSpawner: {fileID: 1623437023}
+  shapeElementDatas:
+  - type: 0
+    go: {fileID: 8025173693593022258, guid: 8ee96aacd987d1741bf54a441e5eb594, type: 3}
+    sprite: {fileID: 21300000, guid: 0131c7ea6c2e69049b536783f3a25c54, type: 3}
+  - type: 1
+    go: {fileID: 2338225305629615937, guid: 60ba8b8bfaab44c4f815a3e11a4e7cf6, type: 3}
+    sprite: {fileID: 21300000, guid: fdd697d37af904f47b4b5a6fe3e77854, type: 3}
+  - type: 2
+    go: {fileID: 4459669424948696378, guid: b16aefab1d2581c4884d258e0deb4c47, type: 3}
+    sprite: {fileID: 21300000, guid: 66457bab8364fe44d9f3e60ec6d456ee, type: 3}
+  - type: 3
+    go: {fileID: 4459669424948696378, guid: 96d7c0335826ff2418e08431772af956, type: 3}
+    sprite: {fileID: 21300000, guid: 2d5d77cc3b11dae44a4d3fdbd26bc119, type: 3}
+  potShapePrefabDatas:
+  - shape: 0
+    baseMakerGo: {fileID: 5507695853124790707, guid: b8016ec46b412b84c853508ad5e262e0, type: 3}
+    resultMakerGo: {fileID: 5507695853124790707, guid: a97d781ff26e2f64ab1e14763f1fb75d, type: 3}
+    sprite: {fileID: 21300000, guid: 6b5da936f74ebe94f8f3834db6aaad40, type: 3}
+  - shape: 1
+    baseMakerGo: {fileID: 7502079399828981645, guid: b22695d672a4e9848b9a4a16d4437034, type: 3}
+    resultMakerGo: {fileID: 7502079399828981645, guid: 87069f255f52fbc40815b040641e989d, type: 3}
+    sprite: {fileID: 21300000, guid: 2fdfc3369b50f994e9e9a3d8b990ffc2, type: 3}
+  - shape: 2
+    baseMakerGo: {fileID: 7775200620410397657, guid: beaafb8f15e9db249a23d2f032ad237e, type: 3}
+    resultMakerGo: {fileID: 7775200620410397657, guid: e832cf0305ec927429a72410c4a38053, type: 3}
+    sprite: {fileID: 21300000, guid: a86f3668043518942965337ff90b7cf7, type: 3}
+  - shape: 3
+    baseMakerGo: {fileID: 7502079399828981645, guid: b22695d672a4e9848b9a4a16d4437034, type: 3}
+    resultMakerGo: {fileID: 7775200620410397657, guid: e832cf0305ec927429a72410c4a38053, type: 3}
+    sprite: {fileID: 21300000, guid: 67a2937fe417f0a49b410eafb53069b9, type: 3}
 --- !u!4 &778882568
 Transform:
   m_ObjectHideFlags: 0
@@ -2302,15 +2332,6 @@ MonoBehaviour:
   - {fileID: 1663007635}
   - {fileID: 605478539}
   spawnerParent: {fileID: 1623437022}
-  potShapePrefabDatas:
-  - shape: 0
-    prefab: {fileID: 5507695853124790707, guid: b8016ec46b412b84c853508ad5e262e0, type: 3}
-  - shape: 1
-    prefab: {fileID: 7502079399828981645, guid: b22695d672a4e9848b9a4a16d4437034, type: 3}
-  - shape: 2
-    prefab: {fileID: 7775200620410397657, guid: beaafb8f15e9db249a23d2f032ad237e, type: 3}
-  - shape: 3
-    prefab: {fileID: 2061339229266351673, guid: 7a660a61be2548b489a4e87fb287ca9f, type: 3}
   curBase: {fileID: 0}
 --- !u!1 &1625928378
 GameObject:
@@ -2892,11 +2913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3035,11 +3056,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8358517612156357296, guid: b2d3ae4f12716654f9a2275ea284c11c, type: 3}
       propertyPath: m_LocalPosition.x

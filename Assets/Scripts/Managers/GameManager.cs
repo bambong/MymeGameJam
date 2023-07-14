@@ -53,36 +53,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public GameObject CheckRecipes(MakerController maker) 
-    {
-
-        for(int i =0; i < maker.frames.Count; ++i) 
-        {
-            Debug.Log($"{i} ¹øÂ° ½½·Ô :{maker.frames[i].curElementType}");
-        }
-
-        //foreach(var recipe in allRecipesData.recipeDatas)
-        //{
-
-        //    bool isSuccess = false;
-        //    for(int i =0; i < maker.frames.Count; ++i) 
-        //    {
-        //        if(recipe.typeRecipe[i] != maker.frames[i].curElementType) 
-        //        {
-        //            isSuccess = false;
-        //            break;
-        //        }
-        //        isSuccess = true;
-        //    }
-        //    if(isSuccess) 
-        //    {
-        //        return recipe.resultPot;
-        //    }
-                
-        //}
-        return null;
-
-    }
 
     #region Score
 

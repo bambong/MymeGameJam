@@ -28,7 +28,7 @@ public class BaseMakerSpawnerController : MonoBehaviour
     public void Generate(PotShapeType type) 
     {
         DestroyCurBase();
-        var prefab = PrefabsManager.Instance.potPrefabs[type].prefab;
+        var prefab = PrefabsManager.Instance.potPrefabs[type].baseMakerGo;
         var go = Instantiate(prefab,spawnerParent.transform.position,Quaternion.identity,spawnerParent);
         curBase = go.GetComponent<MakerController>();
 

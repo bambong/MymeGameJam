@@ -14,7 +14,8 @@ public class ShapeElementData
 public class PotShapePrefabData
 {
     public PotShapeType shape;
-    public GameObject prefab;
+    public GameObject baseMakerGo;
+    public GameObject resultMakerGo;
     public Sprite sprite;
 }
 

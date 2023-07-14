@@ -24,14 +24,23 @@ public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public Vector3 startPos;
     [HideInInspector]
     public Transform prevParent;
-    public Image image;
+
+    public List<Image> images;
+    public List<ElementType> elementTypes = new List<ElementType>();
 
     private void Start()
     {
         rect = GetComponent<RectTransform>();
         prevParent = transform.parent;
     }
-
+    public void Spawn(MakerController maker) 
+    {
+        for(int i= 0; i < maker.frames.Count; ++i)
+        {
+            elementTypes.Add(maker.frames[i].curElementType);
+            images[i].sprite = PrefabsManager.Instance.elementPrefabs[maker.frames[i].curElementType].sprite;
+        }
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         StartPosUpdate();
