@@ -7,12 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     
-    
+    [HideInInspector]
     public GameStateController stateController;
+    
+    [Header("UI Parent")]
     public Transform elementMoveParent;
-    public GraphicRaycaster graphicRaycaster;
-
+    public Transform resultLayout;
+    
+    [Header("조합 레시피 데이터")]
     public AllRecipesData allRecipesData;
+    public GraphicRaycaster graphicRaycaster;
     private void Start()
     {
         Instance = this;

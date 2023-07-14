@@ -32,8 +32,9 @@ public class FrameController : MonoBehaviour
     {
         if(curElement != null) 
         {
-            Destroy(curElement);
+            Destroy(curElement.gameObject);
         }
+     
         curElement = element;
         element.rect.transform.position = rect.transform.position;
         element.transform.SetParent(transform);
