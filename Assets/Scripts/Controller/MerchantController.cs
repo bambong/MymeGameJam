@@ -16,6 +16,8 @@ public class MerchantController : MonoBehaviour
     private Image fillImage;
     [SerializeField]
     private Transform potImageParent;
+    [SerializeField]
+    private RectTransform potBuyRect;
     
     [Header("점수 얼마나 줄지")]
     public int scoreAmount = 30;
@@ -103,7 +105,11 @@ public class MerchantController : MonoBehaviour
             StopCoroutine(waitCo);
             waitCo = null;
         }
-
+        var desirePotRect = desirePot.GetComponent<RectTransform>();
+        desirePot.transform.SetParent(potBuyRect.transform);
+        desirePotRect.anchoredPosition = Vector3.zero;
+        desirePotRect.rotation = Quaternion.identity;
+        fillImage.fillAmount = 0;
         SoundManager.Instance.PlayAudio_Effect_MerchantHappy();
         GameManager.Instance.AddScore(scoreAmount);
         GameManager.Instance.merchantCount++;

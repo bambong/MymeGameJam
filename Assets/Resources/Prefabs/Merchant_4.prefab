@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2421633355916473404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5390679430851792461}
+  - component: {fileID: 7383807421469300701}
+  m_Layer: 5
+  m_Name: PotResult
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5390679430851792461
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421633355916473404}
+  m_LocalRotation: {x: -0, y: -0, z: 0.17785764, w: 0.98405623}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7195484462460848367}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20.49}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -27.020004, y: -13.429993}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7383807421469300701
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421633355916473404}
+  m_CullTransparentMesh: 1
 --- !u!1 &3956650129906436696
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +132,7 @@ MonoBehaviour:
   thinkBox: {fileID: 6691900933133785866}
   fillImage: {fileID: 1769191755841566665}
   potImageParent: {fileID: 3382219401665832537}
+  potBuyRect: {fileID: 5390679430851792461}
   scoreAmount: 700
   waitTime: 30
   moveSpeed: 300
@@ -487,6 +533,7 @@ RectTransform:
   m_Children:
   - {fileID: 5392309520984497281}
   - {fileID: 8645734467050843736}
+  - {fileID: 5390679430851792461}
   - {fileID: 6079252333893256544}
   m_Father: {fileID: 8003102707646566547}
   m_RootOrder: -1
