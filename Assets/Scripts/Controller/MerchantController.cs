@@ -26,7 +26,7 @@ public class MerchantController : MonoBehaviour
     public float moveSpeed = 10;
 
     [HideInInspector]
-    public PotType desirePot;
+    public PotShapeType desirePot;
 
 
     public Vector2 desirePos;

@@ -17,14 +17,14 @@ public class OvenController : MonoBehaviour
 
     [SerializeField]
     private Button completeButton;
-
+    [SerializeField]
+    public Image colorImage;
 
     [HideInInspector]
     public bool isBaking = false;
 
     public BakeRank curRank = BakeRank.None;
     public GameObject curPot;
-    private Image image;
   
     
     public Color normalColor;
@@ -41,7 +41,6 @@ public class OvenController : MonoBehaviour
     
     private void Start()
     {
-        image = GetComponent<Image>();
         completeButton.gameObject.SetActive(false);
         completeButton.onClick.AddListener(BakeComplete);
     }
@@ -75,7 +74,7 @@ public class OvenController : MonoBehaviour
         }
         isBaking = false;
         completeButton.gameObject.SetActive(false);
-        image.color = normalColor;
+        colorImage.color = normalColor;
         
         if(curRank == BakeRank.Burn) 
         {
@@ -94,11 +93,11 @@ public class OvenController : MonoBehaviour
         while(curTime < 1) 
         {
             curTime += Time.deltaTime * factor;
-            image.color = Color.Lerp(normalColor,bakecompleteColor,(float)curTime);
+            colorImage.color = Color.Lerp(normalColor,bakecompleteColor,(float)curTime);
             yield return null;
         }
         completeButton.gameObject.SetActive(true);
-        image.color = bakecompleteColor;
+        colorImage.color = bakecompleteColor;
         curRank = BakeRank.Good;
         curTime = 0;
         factor = 1 / GOOD_STAY_TIME;
@@ -112,7 +111,7 @@ public class OvenController : MonoBehaviour
         while(curTime < 1)
         {
             curTime += Time.deltaTime * factor;
-            image.color = Color.Lerp(bakecompleteColor,burnColor,(float)curTime);
+            colorImage.color = Color.Lerp(bakecompleteColor,burnColor,(float)curTime);
             yield return null;
         }
         curRank = BakeRank.Burn;

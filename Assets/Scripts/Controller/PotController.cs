@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public enum PotType 
+public enum PotShapeType 
 {
     Type_1,
     Type_2,
@@ -17,7 +17,7 @@ public enum PotType
 
 public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    public PotType myType;
+    public PotShapeType myType;
     [HideInInspector]
     public RectTransform rect;
     [HideInInspector]
