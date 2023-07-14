@@ -14,6 +14,9 @@ public class OvenController : MonoBehaviour
 {
 
     [SerializeField]
+    private Animator ovenAnimator;
+
+    [SerializeField]
     private Button completeButton;
     [SerializeField]
     public Image colorImage;
@@ -35,11 +38,12 @@ public class OvenController : MonoBehaviour
 
     public Coroutine bakeCo;
 
-    public static float BAKE_TIME = 3f;
-    public static float GOOD_STAY_TIME = 2f;
-    public static float BAKE_OVER_TIME = 2f;
+    public readonly float BAKE_TIME = 3f;
+    public readonly float GOOD_STAY_TIME = 2f;
+    public readonly float BAKE_OVER_TIME = 2f;
+    public readonly string WORK_ANIM_KEY = "IsWork";
+    public readonly string WORK_SPEED_KEY = "WorkSpeed";
 
-    
     private void Start()
     {
         completeButton.gameObject.SetActive(false);
@@ -53,12 +57,11 @@ public class OvenController : MonoBehaviour
             return false;
         }
      
-        isBaking = true;
         curpotType = maker.myType;
         curElementTypes = new List<ElementType>();
         for(int i =0; i < maker.frames.Count; ++i) 
         {
-            if(maker.frames[i].curElementType == ElementType.None) 
+            if(maker.frames[i].curElementType == ElementType.None)
             {
                 return false;
             }
@@ -66,6 +69,7 @@ public class OvenController : MonoBehaviour
             curElementTypes.Add(maker.frames[i].curElementType);
         }
 
+        isBaking = true;
         bakeCo = StartCoroutine(Bake());
         return true;
     }
@@ -81,6 +85,7 @@ public class OvenController : MonoBehaviour
             StopCoroutine(bakeCo);
         }
         isBaking = false;
+        ovenAnimator.SetBool(WORK_ANIM_KEY,false);
         completeButton.gameObject.SetActive(false);
         colorImage.color = normalColor;
         
@@ -103,12 +108,15 @@ public class OvenController : MonoBehaviour
 
     IEnumerator Bake() 
     {
+        ovenAnimator.SetBool(WORK_ANIM_KEY,true);
+        ovenAnimator.SetFloat(WORK_SPEED_KEY,1);
         double curTime = 0;
         double factor = 1 / BAKE_TIME;
         colorImage.color = bakingColor;
         while(curTime < 1) 
         {
             curTime += Time.deltaTime * factor;
+            ovenAnimator.SetFloat(WORK_SPEED_KEY,1 + (float)curTime);
             colorImage.color = Color.Lerp(bakingColor,bakecompleteColor,(float)curTime);
             yield return null;
         }

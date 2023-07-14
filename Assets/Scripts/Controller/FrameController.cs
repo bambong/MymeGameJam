@@ -26,6 +26,7 @@ public class FrameController : MonoBehaviour
     private void Start()
     {
         rect = GetComponent<RectTransform>();
+        curElement = null;
     }
 
     public void OnDrop(ElementController element) 
