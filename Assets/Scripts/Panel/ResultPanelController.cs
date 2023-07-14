@@ -14,6 +14,7 @@ public class ResultPanelController : MonoBehaviour
     public TextMeshProUGUI resultScoreText;
 
     public readonly float RESULT_TEXT_ANIM_TIME = 2f;
+    public readonly float MERCHANT_COUNT_SCORE = 500f;
     public void Open() 
     {
         rect.gameObject.SetActive(true);
@@ -50,7 +51,7 @@ public class ResultPanelController : MonoBehaviour
         }
         curTime = 0;
         scoreText.text = $"¸í¼º : {GameManager.Instance.score}";
-        var resultRate = (GameManager.Instance.merchantCount / 2) * GameManager.Instance.score;
+        var resultRate = (GameManager.Instance.merchantCount * MERCHANT_COUNT_SCORE) + GameManager.Instance.score;
         while(curTime < 1)
         {
             curTime += Time.deltaTime * factor;
