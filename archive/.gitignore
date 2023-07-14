@@ -1,0 +1,105 @@
+# =============== #
+ 
+# Unity generated #
+ 
+# =============== #
+ 
+Temp/
+ 
+Obj/
+ 
+UnityGenerated/
+ 
+Library/
+
+Logs/
+
+[Uu]ser[Ss]ettings/
+ 
+# ===================================== #
+ 
+# Visual Studio / MonoDevelop generated #
+ 
+# ===================================== #
+ 
+ExportedObj/
+ 
+*.svd
+ 
+*.userprefs
+ 
+*.csproj
+ 
+*.pidb
+ 
+*.suo
+ 
+*.sln
+ 
+*.user
+ 
+*.unityproj
+ 
+*.booproj
+# ============ #
+ 
+# OS generated #
+ 
+# ============ #
+ 
+.DS_Store
+ 
+.DS_Store?
+ 
+._*
+ 
+.Spotlight-V100
+ 
+.Trashes
+ 
+ehthumbs.db
+ 
+Thumbs.db
+ 
+GraphicsSettings.asset
+ 
+ProjectSettings.asset
+ 
+ProjectVersion.txt
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+
+
+Demos/
+Demo/
+Layouts/
+
+# Never ignore DLLs in the FMOD subfolder, so make sure that the FMOD-folder is in the correct path.
+!**/[Aa]ssets/Plugins/FMOD/**/*.dll
+!**/NpcProject/Assets/Plugins/FMOD/**/*.dll
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor
+!**/[Aa]ssets/Gizmos/FMOD/*
+!**/[Aa]ssets/Editor Default Resources/FMOD/*
+
+# Log-files
+fmod.log
+fmod_editor.log
+
+#Add New
+**/StreamingAssets/build_info
+**/StreamingAssets/build_info.meta
+**/StreamingAssets.meta
+**/.vs/
+.vsconfig
+*.unitypackage
+*.unitypackage.meta
+*.pidb.meta
+sysinfo.txt
+Unity-Logs-Viewer/
+
+UnityPlayground_Data/
+UnityCrashHandler*
+UnityPlayer.dll
+UnityPlayground*
+MonoBleedingEdge/
+*.log

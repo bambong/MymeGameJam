@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public enum ElementType 
 {
-    None,
-    Type_1,
-    Type_2,
-    Type_3,
-    Type_4
+    None= -1,
+    Type_1 = 0,
+    Type_2 = 1,
+    Type_3 = 2,
+    Type_4 = 3
 }
 
 
@@ -26,6 +26,7 @@ public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,I
     public Transform prevParent;
 
     public FrameController curFrame;
+
     private void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -58,7 +59,13 @@ public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,I
         {
             if(item.gameObject.CompareTag("Frame")) 
             {
+                if(curFrame != null)
+                {
+                    curFrame.curElement = null;
+                    curFrame = null;
+                }
                 item.gameObject.GetComponent<FrameController>().OnDrop(this);
+                PrefabsManager.Instance.elementSpawner[(int)myType].Generate();
                 return;
             }
         }
