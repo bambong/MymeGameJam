@@ -2116,8 +2116,8 @@ MonoBehaviour:
     resultMakerGo: {fileID: 7775200620410397657, guid: e832cf0305ec927429a72410c4a38053, type: 3}
     sprite: {fileID: 21300000, guid: a86f3668043518942965337ff90b7cf7, type: 3}
   - shape: 3
-    baseMakerGo: {fileID: 7502079399828981645, guid: b22695d672a4e9848b9a4a16d4437034, type: 3}
-    resultMakerGo: {fileID: 7775200620410397657, guid: e832cf0305ec927429a72410c4a38053, type: 3}
+    baseMakerGo: {fileID: 2061339229266351673, guid: 7a660a61be2548b489a4e87fb287ca9f, type: 3}
+    resultMakerGo: {fileID: 2061339229266351673, guid: 4ceefc0ca49983747bd076682946d764, type: 3}
     sprite: {fileID: 21300000, guid: 67a2937fe417f0a49b410eafb53069b9, type: 3}
 --- !u!4 &778882568
 Transform:
