@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public enum PotType 
 {
@@ -23,6 +24,8 @@ public class PotController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public Vector3 startPos;
     [HideInInspector]
     public Transform prevParent;
+    public Image image;
+
     private void Start()
     {
         rect = GetComponent<RectTransform>();

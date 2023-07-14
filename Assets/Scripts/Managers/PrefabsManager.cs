@@ -13,7 +13,7 @@ public class PrefabsManager : MonoBehaviour
     [Header("도자기 틀")]
     public GameObject maker;
     [Header("손님")]
-    public List<GameObject> customers;
+    public List<GameObject> merchants;
 
 
     [Space(10)]
@@ -29,7 +29,13 @@ public class PrefabsManager : MonoBehaviour
     {
         Instance = this;
     }
-
-
+    public GameObject GetRandomMerchant()
+    {
+        return merchants[merchants.GetRandomIndex()];
+    }
+    public GameObject GetRandomPots()
+    {
+        return pots[pots.GetRandomIndex()];
+    }
 
 }

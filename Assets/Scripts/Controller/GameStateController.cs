@@ -57,3 +57,48 @@ public class GameNone : Singleton<GameNone>, IState<GameManager>,IInit
     {
     }
 }
+public class GameOver : Singleton<GameOver>, IState<GameManager>, IInit
+{
+    public void Init()
+    {
+    }
+
+    public void OnEnter(GameManager controller)
+    {
+    }
+
+    public void OnExit(GameManager controller)
+    {
+    }
+
+    public void OnFixedUpdate(GameManager controller)
+    {
+    }
+
+    public void OnUpdate(GameManager controller)
+    {
+    }
+}
+public class GamePlay : Singleton<GamePlay>, IState<GameManager>, IInit
+{
+    public void Init()
+    {
+    }
+
+    public void OnEnter(GameManager controller)
+    {
+    }
+
+    public void OnExit(GameManager controller)
+    {
+    }
+
+    public void OnFixedUpdate(GameManager controller)
+    {
+    }
+
+    public void OnUpdate(GameManager controller)
+    {
+        controller.merchantSpawnController.SpawnUpdate();
+    }
+}
