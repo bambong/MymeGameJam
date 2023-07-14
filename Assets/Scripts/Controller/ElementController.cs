@@ -25,6 +25,7 @@ public class ElementController : MonoBehaviour ,IDragHandler,IBeginDragHandler,I
     [HideInInspector]
     public Transform prevParent;
 
+    public FrameController curFrame;
     private void Start()
     {
         rect = GetComponent<RectTransform>();
