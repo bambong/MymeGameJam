@@ -6,7 +6,7 @@ public class MerchantSpawnController : MonoBehaviour
 {
     public RectTransform rect;
     
-    private float curTime = 0;
+    private float curTime = 3f;
     [Header("상인 스폰 시간")]
     public float spawnTime = 3f;
 
@@ -21,7 +21,7 @@ public class MerchantSpawnController : MonoBehaviour
     public void SpawnUpdate()
     {
         curTime += Time.deltaTime;
-        if(curTime >= spawnTime) 
+        if(curTime >= GameManager.Instance.CurrentLevelData.spawnTime) 
         {
             if(currentMerchantControllers.Count >= maxMerchant)
             {
@@ -35,7 +35,7 @@ public class MerchantSpawnController : MonoBehaviour
 
     public void SpawnMerchant() 
     {
-        var merchant = PrefabsManager.Instance.GetRandomMerchant();
+        var merchant = GameManager.Instance.CurrentLevelData.enableMerchantSpawn.GetRandom();
         var go = Instantiate(merchant,transform.position,Quaternion.identity,transform);
         var merchantController = go.GetComponent<MerchantController>();
         var pot = PrefabsManager.Instance.GetRandomPots();

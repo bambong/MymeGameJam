@@ -24,6 +24,11 @@ public static class Extension
         int index = Random.Range(0, list.Count);
         return index;
     }
+    public static T GetRandom<T>(this List<T> list)
+    {
+        int index = Random.Range(0,list.Count);
+        return list[index];
+    }
     //public static List<T> RandomShupple<T>(this List<T> list)
     //{
     //    int index = Random.Range(0, list.Count);

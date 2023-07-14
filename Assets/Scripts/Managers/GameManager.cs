@@ -7,8 +7,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    [Header("레벨 데이터")]
+    [SerializeField]
+    private List<LevelData> levelDatas;
     
-    
+    [Header("최대 체력")]
+    [SerializeField]
+    private float maxHp = 100f;
     
     [HideInInspector]
     public GameStateController stateController;
@@ -19,7 +24,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public Image hpFillImage;
 
-
     [Header("UI Parent")]
     public Transform elementMoveParent;
     public Transform resultLayout;
@@ -29,13 +33,13 @@ public class GameManager : MonoBehaviour
 
     public EndPanelController endPanel;
 
-    private readonly float MAX_HP = 10f;
+
 
     public int score;
     private float curHp;
-
+    private int curLevel = 0;
     public int merchantCount; 
-
+    public LevelData CurrentLevelData { get => levelDatas[curLevel]; }
 
     private void Start()
     {
@@ -43,7 +47,8 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlayAudio_BGM();
         stateController = new GameStateController(this);
         score = 0;
-        curHp = MAX_HP;
+        curLevel = 0;
+        curHp = maxHp;
         UpdateHpImage();
         UpdateScoreText();
         stateController.ChangeState(GamePlay.Instance);
@@ -57,8 +62,6 @@ public class GameManager : MonoBehaviour
     {
         stateController.FixedUpdateActive();
     }
-
-
 
     #region Score
 
@@ -88,10 +91,21 @@ public class GameManager : MonoBehaviour
 
     public void UpdateHpImage()
     {
-        hpFillImage.fillAmount = curHp / MAX_HP;
+        hpFillImage.fillAmount = curHp / maxHp;
     }
     #endregion Hp
-
+    
+    public void UpdateLevel() 
+    { 
+        if(curLevel >= levelDatas.Count -1) 
+        {
+            return;
+        }
+        if(levelDatas[curLevel+1].scoreForThisLevel <= score) 
+        {
+            curLevel++;
+        }
+    }
 
 }
 

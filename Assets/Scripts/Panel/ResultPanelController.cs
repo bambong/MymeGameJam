@@ -59,7 +59,7 @@ public class ResultPanelController : MonoBehaviour
             yield return null;
         }
         resultScoreText.text = $"최종점수 : {resultRate}";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         menuButton.gameObject.SetActive(true);
 
     }
@@ -67,7 +67,8 @@ public class ResultPanelController : MonoBehaviour
     public void OnMenuButtonActive() 
     {
         SoundManager.Instance.PlayAudio_Select();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneMangerEx.Instance.LoadScene(SceneType.MainGameScene);
+        menuButton.interactable = false;
     }
 
 }

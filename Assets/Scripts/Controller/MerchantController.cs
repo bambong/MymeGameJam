@@ -19,6 +19,10 @@ public class MerchantController : MonoBehaviour
     [SerializeField]
     private RectTransform potBuyRect;
     
+    [Header("얼마나 데미지를 줄지")]
+    [SerializeField]
+    private float damage = 10f;
+
     [Header("점수 얼마나 줄지")]
     public int scoreAmount = 30;
 
@@ -27,7 +31,6 @@ public class MerchantController : MonoBehaviour
 
     public float moveSpeed = 10;
 
-
     PotController desirePot;
     public Vector2 desirePos;
     private Coroutine waitCo;
@@ -35,9 +38,6 @@ public class MerchantController : MonoBehaviour
     private bool isSpawning = true;
 
     private bool isComplete = false;
-
-    private float damage = 10f; 
-
     public int MyIndex { get; set; }
 
   
@@ -55,7 +55,10 @@ public class MerchantController : MonoBehaviour
 
     public void PickRandomPot()
     {
-        var pot = PrefabsManager.Instance.potShapePrefabDatas[PrefabsManager.Instance.potShapePrefabDatas.GetRandomIndex()].resultMakerGo;
+
+        var levelRandomPot = GameManager.Instance.CurrentLevelData.enableShapeSpawn.GetRandom();
+
+        var pot = PrefabsManager.Instance.potPrefabs[levelRandomPot].resultMakerGo;
 
         desirePot = Instantiate(pot,potImageParent.transform.position,Quaternion.identity,potImageParent.transform).GetComponent<PotController>();
         

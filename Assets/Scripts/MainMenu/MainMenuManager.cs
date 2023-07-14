@@ -75,6 +75,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void UnityButtonInput_CutScene_Page4()
     {
+        SceneMangerEx.Instance.LoadScene(SceneType.MainGameScene);
         //UnityEngine.SceneManagement.SceneManager.LoadScene();
     }
 }

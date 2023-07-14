@@ -38,9 +38,9 @@ public class OvenController : MonoBehaviour
 
     public Coroutine bakeCo;
 
-    public readonly float BAKE_TIME = 3f;
-    public readonly float GOOD_STAY_TIME = 2f;
-    public readonly float BAKE_OVER_TIME = 2f;
+    public readonly float BAKE_TIME = 5f;
+    public readonly float GOOD_STAY_TIME = 3f;
+    public readonly float BAKE_OVER_TIME = 3f;
     public readonly string WORK_ANIM_KEY = "IsWork";
     public readonly string WORK_SPEED_KEY = "WorkSpeed";
 

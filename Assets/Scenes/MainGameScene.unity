@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rect: {fileID: 635849139}
-  spawnTime: 5
+  spawnTime: 7
   maxMerchant: 5
   startPos: -1300
   posDiff: 240
@@ -3302,6 +3302,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144ef41f23673946a33a8e2d4ce493f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelDatas:
+  - scoreForThisLevel: 0
+    enableShapeSpawn: 00000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    spawnTime: 5
+  - scoreForThisLevel: 1500
+    enableShapeSpawn: 0000000001000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    spawnTime: 5
+  - scoreForThisLevel: 3000
+    enableShapeSpawn: 000000000100000002000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
+    spawnTime: 5
+  - scoreForThisLevel: 4000
+    enableShapeSpawn: 000000000100000002000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
+    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
+    spawnTime: 5
+  - scoreForThisLevel: 5000
+    enableShapeSpawn: 00000000010000000200000003000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
+    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
+    - {fileID: 3956650129906436696, guid: a5975b7a97621f144a4c3ebb9e66f716, type: 3}
+    spawnTime: 5
   merchantSpawnController: {fileID: 635849140}
   scoreText: {fileID: 1332229962}
   hpFillImage: {fileID: 1298657627}
