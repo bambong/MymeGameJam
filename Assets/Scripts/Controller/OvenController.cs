@@ -10,10 +10,11 @@ public enum BakeRank
     Burn
 }
 
-
-
 public class OvenController : MonoBehaviour 
 {
+
+    [SerializeField]
+    private Animator ovenAnimator;
 
     [SerializeField]
     private Button completeButton;
@@ -24,7 +25,9 @@ public class OvenController : MonoBehaviour
     public bool isBaking = false;
 
     public BakeRank curRank = BakeRank.None;
-    public GameObject curPot;
+    
+    public PotShapeType curpotType;
+    public List<ElementType> curElementTypes;
   
     
     public Color normalColor;
@@ -35,11 +38,12 @@ public class OvenController : MonoBehaviour
 
     public Coroutine bakeCo;
 
-    public static float BAKE_TIME = 3f;
-    public static float GOOD_STAY_TIME = 2f;
-    public static float BAKE_OVER_TIME = 2f;
+    public readonly float BAKE_TIME = 3f;
+    public readonly float GOOD_STAY_TIME = 2f;
+    public readonly float BAKE_OVER_TIME = 2f;
+    public readonly string WORK_ANIM_KEY = "IsWork";
+    public readonly string WORK_SPEED_KEY = "WorkSpeed";
 
-    
     private void Start()
     {
         completeButton.gameObject.SetActive(false);
@@ -52,13 +56,20 @@ public class OvenController : MonoBehaviour
         {
             return false;
         }
-        var resultPot =  GameManager.Instance.CheckRecipes(maker); 
-        if(resultPot == null)
+     
+        curpotType = maker.myType;
+        curElementTypes = new List<ElementType>();
+        for(int i =0; i < maker.frames.Count; ++i) 
         {
-            return false;
+            if(maker.frames[i].curElementType == ElementType.None)
+            {
+                return false;
+            }
+
+            curElementTypes.Add(maker.frames[i].curElementType);
         }
+
         isBaking = true;
-        curPot = resultPot;
         bakeCo = StartCoroutine(Bake());
         return true;
     }
@@ -74,6 +85,7 @@ public class OvenController : MonoBehaviour
             StopCoroutine(bakeCo);
         }
         isBaking = false;
+        ovenAnimator.SetBool(WORK_ANIM_KEY,false);
         completeButton.gameObject.SetActive(false);
         colorImage.color = normalColor;
         
@@ -82,18 +94,29 @@ public class OvenController : MonoBehaviour
             return;
         }
 
-        GameObject.Instantiate(curPot,Vector3.zero,Quaternion.identity,GameManager.Instance.resultLayout.transform);
+        var result = PrefabsManager.Instance.potPrefabs[curpotType].resultMakerGo;
+
+        var tempPot = Instantiate(result,Vector3.zero,Quaternion.identity,GameManager.Instance.resultLayout).GetComponent<PotController>();
+
+        for(int i = 0; i < curElementTypes.Count; ++i)
+        {
+            tempPot.elementTypes.Add(curElementTypes[i]);
+            tempPot.images[i].sprite = PrefabsManager.Instance.elementPrefabs[curElementTypes[i]].sprite;
+        }
     }
 
 
     IEnumerator Bake() 
     {
+        ovenAnimator.SetBool(WORK_ANIM_KEY,true);
+        ovenAnimator.SetFloat(WORK_SPEED_KEY,1);
         double curTime = 0;
         double factor = 1 / BAKE_TIME;
         colorImage.color = bakingColor;
         while(curTime < 1) 
         {
             curTime += Time.deltaTime * factor;
+            ovenAnimator.SetFloat(WORK_SPEED_KEY,1 + (float)curTime);
             colorImage.color = Color.Lerp(bakingColor,bakecompleteColor,(float)curTime);
             yield return null;
         }
