@@ -15,10 +15,6 @@ public enum BakeRank
 public class OvenController : MonoBehaviour 
 {
 
-    [SerializeField]
-    private Button completeButton;
-
-
     [HideInInspector]
     public bool isBaking = false;
 
@@ -32,7 +28,6 @@ public class OvenController : MonoBehaviour
     public Color burnColor;
 
 
-    public Coroutine bakeCo;
 
     public static float BAKE_TIME = 3f;
     public static float GOOD_STAY_TIME = 2f;
@@ -42,8 +37,6 @@ public class OvenController : MonoBehaviour
     private void Start()
     {
         image = GetComponent<Image>();
-        completeButton.gameObject.SetActive(false);
-        completeButton.onClick.AddListener(BakeComplete);
     }
 
     public bool OnDrop(MakerController maker) 
@@ -52,37 +45,20 @@ public class OvenController : MonoBehaviour
         {
             return false;
         }
+        isBaking = true;
         var resultPot =  GameManager.Instance.CheckRecipes(maker); 
         if(resultPot == null)
         {
             return false;
         }
-        isBaking = true;
         curPot = resultPot;
-        bakeCo = StartCoroutine(Bake());
+        StartCoroutine(Bake());
         return true;
     }
     public void BakeComplete() 
     {
-        if(!isBaking)
-        {
-            return;
-        }
 
-        if(bakeCo != null) 
-        {
-            StopCoroutine(bakeCo);
-        }
-        isBaking = false;
-        completeButton.gameObject.SetActive(false);
-        image.color = normalColor;
-        
-        if(curRank == BakeRank.Burn) 
-        {
-            return;
-        }
-
-        GameObject.Instantiate(curPot,Vector3.zero,Quaternion.identity,GameManager.Instance.resultLayout.transform);
+    
     }
 
 
@@ -97,7 +73,6 @@ public class OvenController : MonoBehaviour
             image.color = Color.Lerp(normalColor,bakecompleteColor,(float)curTime);
             yield return null;
         }
-        completeButton.gameObject.SetActive(true);
         image.color = bakecompleteColor;
         curRank = BakeRank.Good;
         curTime = 0;
@@ -116,7 +91,6 @@ public class OvenController : MonoBehaviour
             yield return null;
         }
         curRank = BakeRank.Burn;
-        bakeCo = null;
     }
    
 }

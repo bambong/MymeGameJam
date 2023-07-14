@@ -45,17 +45,9 @@ public class MakerController : MonoBehaviour, IDragHandler, IBeginDragHandler, I
                 if(item.gameObject.GetComponent<OvenController>().OnDrop(this)) 
                 {
                     Destroy(gameObject);
-                    PrefabsManager.Instance.makerSpawner.ForceGenerate();
                     return;
                 }
             }
-            else if(item.gameObject.CompareTag("Hammer"))
-            {
-                Destroy(gameObject);
-                PrefabsManager.Instance.makerSpawner.ForceGenerate();
-                return;
-            }
-
         }
         rect.transform.position = startPos;
     }

@@ -7,7 +7,6 @@ TagManager:
   - Frame
   - Element
   - Oven
-  - Hammer
   layers:
   - Default
   - TransparentFX
