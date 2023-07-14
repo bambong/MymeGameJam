@@ -28,6 +28,7 @@ public class OvenController : MonoBehaviour
   
     
     public Color normalColor;
+    public Color bakingColor;
     public Color bakecompleteColor;
     public Color burnColor;
 
@@ -89,11 +90,11 @@ public class OvenController : MonoBehaviour
     {
         double curTime = 0;
         double factor = 1 / BAKE_TIME;
-
+        colorImage.color = bakingColor;
         while(curTime < 1) 
         {
             curTime += Time.deltaTime * factor;
-            colorImage.color = Color.Lerp(normalColor,bakecompleteColor,(float)curTime);
+            colorImage.color = Color.Lerp(bakingColor,bakecompleteColor,(float)curTime);
             yield return null;
         }
         completeButton.gameObject.SetActive(true);
