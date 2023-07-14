@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameStateController stateController;
 
-
     public MerchantSpawnController merchantSpawnController;
-    
+
     [Header("UI")]
     public TextMeshProUGUI scoreText;
     public Image hpFillImage;
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
     public Transform resultLayout;
     
     [Header("조합 레시피 데이터")]
-    public AllRecipesData allRecipesData;
     public GraphicRaycaster graphicRaycaster;
 
     private readonly float MAX_HP = 100f;
@@ -63,25 +61,25 @@ public class GameManager : MonoBehaviour
             Debug.Log($"{i} 번째 슬롯 :{maker.frames[i].curElementType}");
         }
 
-        foreach(var recipe in allRecipesData.recipeDatas)
-        {
+        //foreach(var recipe in allRecipesData.recipeDatas)
+        //{
 
-            bool isSuccess = false;
-            for(int i =0; i < maker.frames.Count; ++i) 
-            {
-                if(recipe.typeRecipe[i] != maker.frames[i].curElementType) 
-                {
-                    isSuccess = false;
-                    break;
-                }
-                isSuccess = true;
-            }
-            if(isSuccess) 
-            {
-                return recipe.resultPot;
-            }
+        //    bool isSuccess = false;
+        //    for(int i =0; i < maker.frames.Count; ++i) 
+        //    {
+        //        if(recipe.typeRecipe[i] != maker.frames[i].curElementType) 
+        //        {
+        //            isSuccess = false;
+        //            break;
+        //        }
+        //        isSuccess = true;
+        //    }
+        //    if(isSuccess) 
+        //    {
+        //        return recipe.resultPot;
+        //    }
                 
-        }
+        //}
         return null;
 
     }

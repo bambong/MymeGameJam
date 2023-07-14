@@ -49,8 +49,7 @@ public class HammerController : MonoBehaviour, IDragHandler, IBeginDragHandler, 
             }
             else if(item.gameObject.CompareTag("Maker"))
             {
-                Destroy(item.gameObject);
-                PrefabsManager.Instance.makerSpawner.ForceGenerate();
+                PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
                 break;
             }
         }

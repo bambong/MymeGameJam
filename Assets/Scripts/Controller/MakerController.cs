@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class MakerController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+
+    public PotShapeType myType;
     [HideInInspector]
     public RectTransform rect;
     [HideInInspector]
@@ -44,15 +46,13 @@ public class MakerController : MonoBehaviour, IDragHandler, IBeginDragHandler, I
             {
                 if(item.gameObject.GetComponent<OvenController>().OnDrop(this)) 
                 {
-                    Destroy(gameObject);
-                    PrefabsManager.Instance.makerSpawner.ForceGenerate();
+                    PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
                     return;
                 }
             }
             else if(item.gameObject.CompareTag("Hammer"))
             {
-                Destroy(gameObject);
-                PrefabsManager.Instance.makerSpawner.ForceGenerate();
+                PrefabsManager.Instance.baseMakerSpawner.DestroyCurBase();
                 return;
             }
 
