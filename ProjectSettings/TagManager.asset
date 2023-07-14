@@ -9,6 +9,8 @@ TagManager:
   - Oven
   - Hammer
   - Merchant
+  - Maker
+  - Pot
   layers:
   - Default
   - TransparentFX
