@@ -65,6 +65,11 @@ public class GameOver : Singleton<GameOver>, IState<GameManager>, IInit
 
     public void OnEnter(GameManager controller)
     {
+        foreach (var item in controller.merchantSpawnController.currentMerchantControllers) 
+        {
+            item.StopAllCoroutines();
+        }
+        controller.endPanel.Open();
     }
 
     public void OnExit(GameManager controller)
