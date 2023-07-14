@@ -27,10 +27,15 @@ public class GameManager : MonoBehaviour
     [Header("조합 레시피 데이터")]
     public GraphicRaycaster graphicRaycaster;
 
-    private readonly float MAX_HP = 100f;
+    public EndPanelController endPanel;
 
-    private int score;
+    private readonly float MAX_HP = 10f;
+
+    public int score;
     private float curHp;
+
+    public int merchantCount; 
+
 
     private void Start()
     {

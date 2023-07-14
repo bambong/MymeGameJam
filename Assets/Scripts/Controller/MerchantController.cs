@@ -105,6 +105,7 @@ public class MerchantController : MonoBehaviour
 
 
         GameManager.Instance.AddScore(scoreAmount);
+        GameManager.Instance.merchantCount++;
         SetAnimRunAway();
         return true;
     }
