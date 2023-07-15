@@ -49,30 +49,53 @@ MonoBehaviour:
     enableShapeSpawn: 00000000
     enableMerchantSpawn:
     - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 1500
-    enableShapeSpawn: 0000000001000000
+    spawnTime: 13
+  - scoreForThisLevel: 1000
+    enableShapeSpawn: 000000000000000001000000
     enableMerchantSpawn:
     - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
     - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 3000
-    enableShapeSpawn: 000000000100000002000000
+    spawnTime: 12
+  - scoreForThisLevel: 4000
+    enableShapeSpawn: 00000000000000000100000002000000
     enableMerchantSpawn:
     - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
     - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
     - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 4000
-    enableShapeSpawn: 000000000100000002000000
+    spawnTime: 10
+  - scoreForThisLevel: 6000
+    enableShapeSpawn: 030000000200000001000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
+    spawnTime: 8
+  - scoreForThisLevel: 6500
+    enableShapeSpawn: 00000000010000000200000003000000
     enableMerchantSpawn:
     - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
     - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
     - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
     - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
-    spawnTime: 5
-  - scoreForThisLevel: 5000
-    enableShapeSpawn: 00000000010000000200000003000000
+    spawnTime: 9
+  - scoreForThisLevel: 9000
+    enableShapeSpawn: 000000000100000002000000030000000100000002000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
+    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
+    - {fileID: 3956650129906436696, guid: a5975b7a97621f144a4c3ebb9e66f716, type: 3}
+    spawnTime: 8
+  - scoreForThisLevel: 13000
+    enableShapeSpawn: 000000000100000002000000030000000100000002000000
+    enableMerchantSpawn:
+    - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
+    - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
+    - {fileID: 3956650129906436696, guid: 6be9b586e5b2aea4eb04af95064b7973, type: 3}
+    - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
+    - {fileID: 3956650129906436696, guid: a5975b7a97621f144a4c3ebb9e66f716, type: 3}
+    spawnTime: 6
+  - scoreForThisLevel: 20000
+    enableShapeSpawn: 0000000002000000030000000100000003000000
     enableMerchantSpawn:
     - {fileID: 3956650129906436696, guid: ab9f3f799b9783141b75cbf1b7186a01, type: 3}
     - {fileID: 3956650129906436696, guid: dce278801fbec2247a12b666c4f13b6d, type: 3}
@@ -80,6 +103,7 @@ MonoBehaviour:
     - {fileID: 3956650129906436696, guid: cef024b68f6c3964a8c8bcc920c47095, type: 3}
     - {fileID: 3956650129906436696, guid: a5975b7a97621f144a4c3ebb9e66f716, type: 3}
     spawnTime: 5
+  maxHp: 100
   merchantSpawnController: {fileID: 0}
   scoreText: {fileID: 0}
   hpFillImage: {fileID: 0}

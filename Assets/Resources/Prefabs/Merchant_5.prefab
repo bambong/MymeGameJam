@@ -209,8 +209,9 @@ MonoBehaviour:
   fillImage: {fileID: 1769191755841566665}
   potImageParent: {fileID: 3382219401665832537}
   potBuyRect: {fileID: 5825575104762376696}
+  damage: 30
   scoreAmount: 1000
-  waitTime: 30
+  waitTime: 25
   moveSpeed: 300
   desirePos: {x: 0, y: 0}
 --- !u!1 &4041931298551266484
@@ -512,6 +513,7 @@ GameObject:
   - component: {fileID: 7195484462460848367}
   - component: {fileID: 7331768750927393080}
   - component: {fileID: 3929681171036683281}
+  - component: {fileID: 8010364828788691787}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -581,3 +583,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8010364828788691787
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527472635492294893}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
