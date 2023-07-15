@@ -5,6 +5,7 @@ using UnityEngine;
 public class HowtoPanelController : MonoBehaviour
 {
 
+    public MainMenuManager menuManager;
     public CanvasGroup innerPanel;
     public List<GameObject> pages;
     public Animator animator;
@@ -12,7 +13,7 @@ public class HowtoPanelController : MonoBehaviour
     public int curPage;
     private bool isOpen;
     private readonly string OPEN_ANIM_KEY = "IsOpen";
-    private bool isChange ;
+    private bool isChange;
     public void Open() 
     {
         if(isOpen)
@@ -25,6 +26,7 @@ public class HowtoPanelController : MonoBehaviour
         gameObject.SetActive(true);
         animator.SetBool(OPEN_ANIM_KEY,true);
         StartCoroutine(OpenInner());
+        menuManager.ButtonOn(false);
     }
     public void Close() 
     {
@@ -35,6 +37,7 @@ public class HowtoPanelController : MonoBehaviour
         isOpen = false;
         animator.SetBool(OPEN_ANIM_KEY,false);
         StartCoroutine(CloseInner());
+        menuManager.ButtonOn(true);
     }
     public void OnCloseEnd()
     {
