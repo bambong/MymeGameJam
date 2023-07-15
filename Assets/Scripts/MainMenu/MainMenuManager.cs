@@ -9,17 +9,14 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] Color defaultColor = Color.black;
     [SerializeField] Color highlightColor = Color.white;
 
-    [SerializeField] GameObject[] HowToPage;
+    [SerializeField] HowtoPanelController howToPanel;
     [SerializeField] GameObject CreditPage;
     [SerializeField] GameObject[] cutScenePage;
 
     private void Start()
     {
         CreditPage.SetActive(false);
-        foreach (var item in HowToPage)
-        {
-            item.SetActive(false);
-        }
+
         foreach (var item in cutScenePage) 
         {
             item.SetActive(false);
@@ -33,8 +30,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void UnityButtonInput_Click_HowTo()
     {
-        HowToPage[0].SetActive(true);
-        HowToPage[1].SetActive(true);
+        howToPanel.Open();
     }
     public void UnityButtonInput_Click_Credit()
     {
@@ -48,14 +44,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
 
-    public void UnityButtonInput_HowTo_Page1()
-    {
-        HowToPage[0].SetActive(false);
-    }
-    public void UnityButtonInput_HowTo_Page2()
-    {
-        HowToPage[1].SetActive(false);
-    }
+  
     public void UnityButtonInput_Credit_Page()
     {
         CreditPage.SetActive(false);
@@ -77,5 +66,13 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneMangerEx.Instance.LoadScene(SceneType.MainGameScene);
         //UnityEngine.SceneManagement.SceneManager.LoadScene();
+    }
+
+    public void ButtonOn(bool isOn) 
+    {
+        for(int i =0; i < buttonList.Length; ++i) 
+        {
+            buttonList[i].interactable = isOn;
+        }
     }
 }
