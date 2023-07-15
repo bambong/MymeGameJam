@@ -57,6 +57,15 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         stateController.UpdateActive();
+
+        if(Input.GetKey(KeyCode.P) && Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            score += 1000;
+        }
+        if (Input.GetKey(KeyCode.P) && Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            curHp = 10;
+        }
     }
     private void FixedUpdate()
     {
