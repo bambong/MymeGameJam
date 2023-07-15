@@ -68,7 +68,7 @@ public class ResultPanelController : MonoBehaviour
     public void OnMenuButtonActive() 
     {
         SoundManager.Instance.PlayAudio_Select();
-        SceneMangerEx.Instance.LoadScene(SceneType.MainGameScene);
+        SceneMangerEx.Instance.LoadScene(SceneType.MainMenuScene);
         menuButton.interactable = false;
     }
 

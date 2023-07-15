@@ -43,6 +43,7 @@ public class MerchantController : MonoBehaviour
   
     private readonly string MOVE_ANIM_KEY = "IsMove";
     private readonly string RUNAWAY_ANIM_KEY = "IsRun";
+    private readonly string SPEED_ANIM_KEY = "AngryGauge";
 
     public void OnSpawn(Vector2 desirePos,PotController pot)
     {
@@ -161,6 +162,7 @@ public class MerchantController : MonoBehaviour
         while(curTime < 1)
         {
             curTime += (double)Time.deltaTime * factor;
+            animator.SetFloat(SPEED_ANIM_KEY,1f + ((float)curTime *1.4f));
             fillImage.fillAmount = (float)curTime;
             yield return null;
         }
