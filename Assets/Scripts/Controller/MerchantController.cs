@@ -33,6 +33,8 @@ public class MerchantController : MonoBehaviour
 
     PotController desirePot;
     public Vector2 desirePos;
+
+    private float angryGauge;
     private Coroutine waitCo;
 
     private bool isSpawning = true;
@@ -47,6 +49,7 @@ public class MerchantController : MonoBehaviour
 
     public void OnSpawn(Vector2 desirePos,PotController pot)
     {
+        angryGauge = 0;
         thinkBox.gameObject.SetActive(false);
         SetAnimMove();
         PickRandomPot();
@@ -62,7 +65,7 @@ public class MerchantController : MonoBehaviour
         var pot = PrefabsManager.Instance.potPrefabs[levelRandomPot].resultMakerGo;
 
         desirePot = Instantiate(pot,potImageParent.transform.position,Quaternion.identity,potImageParent.transform).GetComponent<PotController>();
-        
+      
         for(int i=0; i < desirePot.images.Count; ++i) 
         {
             var randomElement = PrefabsManager.Instance.shapeElementDatas[PrefabsManager.Instance.shapeElementDatas.GetRandomIndex()];
@@ -102,6 +105,7 @@ public class MerchantController : MonoBehaviour
         if(!CheckCorrectPot(pot)) 
         {
             SoundManager.Instance.PlayAudio_Error();
+            AddAngryGauge(0.1f);
             return false;
         }
         if(waitCo != null) 
@@ -156,14 +160,13 @@ public class MerchantController : MonoBehaviour
     public IEnumerator Wait() 
     {
         SetAnimIdle();
-        double curTime = 0;
-        double factor = 1/ waitTime;
+        float factor = 1/ waitTime;
 
-        while(curTime < 1)
+        while(angryGauge < 1)
         {
-            curTime += (double)Time.deltaTime * factor;
-            animator.SetFloat(SPEED_ANIM_KEY,1f + ((float)curTime *1.4f));
-            fillImage.fillAmount = (float)curTime;
+            angryGauge += Time.deltaTime * factor;
+            animator.SetFloat(SPEED_ANIM_KEY,1f + (angryGauge * 1.4f));
+            fillImage.fillAmount = angryGauge;
             yield return null;
         }
         SoundManager.Instance.PlayAudio_Effect_MerchantAngry();
@@ -171,7 +174,12 @@ public class MerchantController : MonoBehaviour
 
         SetAnimRunAway();
         waitCo = null;
-
+    }
+    public void AddAngryGauge(float amount) 
+    {
+        angryGauge += amount;
+        animator.SetFloat(SPEED_ANIM_KEY,1f + (angryGauge * 1.4f));
+        fillImage.fillAmount = angryGauge;
     }
     public IEnumerator SpawnMove(Vector2 desirePos)
     {
